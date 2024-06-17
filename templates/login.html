@@ -22,15 +22,21 @@
     <div class="logindetailsdiv">
       <form action="" method="POST">
         {{ form.hidden_tag() }}
+        <div id="errordiv">
+          {%if error%}
+          <p>{{error}}</p>
+          {%endif%}
+        </div>
         <p class="usernamefield">{{ form.username }}</p>
         <p class="passwordfield">{{ form.password }}</p>
         {{form.submit}}
+        <p>Don't have an account?</p>
       </form>
-
-      <p>Don't have an account?</p>
-      <a href="{{url_for('signup')}}">
-        <button>Signup</button>
-      </a>
+      <div class="signupdiv">
+        <a href="{{url_for('signup')}}">
+          <button class="signupbtn">Signup</button>
+        </a>
+      </div>
     </div>
   </body>
 </html>

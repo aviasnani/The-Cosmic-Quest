@@ -55,6 +55,7 @@ class SignupForm(FlaskForm):
   username = StringField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
   password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Password"})
   submit = SubmitField("Signup")
+  error = ""
   def validate_username(self, username):
     existing_username = User.query.filter_by(username=username.data).first()
     if existing_username:
@@ -62,11 +63,12 @@ class SignupForm(FlaskForm):
   def validate_email(self, email):
     existing_email = User.query.filter_by(email=email.data).first()
     if existing_email:
-      raise ValidationError("This email address is already registered.")
+      raise ValidationError("This email id already exists.")
   def validate_phone(self, phone):
     existing_phone = User.query.filter_by(phone=phone.data).first()
     if existing_phone:
-      raise ValidationError("This phone number is already registered.")
+      raise ValidationError("This phone number already exists")
+    
    
   
 class LoginForm(FlaskForm):
@@ -383,4 +385,4 @@ def delete_user(user_id):
 if __name__ == '__main__':
   with app.app_context():
     db.create_all()
-  app.run(debug=True)
+  app.run(debug=True, port=5001)
