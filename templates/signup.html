@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='signup.css') }}"
+    />
+    <title>Signup</title>
+  </head>
+  <body>
+    <h1>Signup</h1>
+    <div class="signupdetailsdiv">
+      <form action="" method="POST">
+        {{ form.hidden_tag() }} {{ form.fname }} {{ form.lname }} {{ form.email
+        }} {{ form.phone }} {{ form.username }} {{ form.password }}
+        {{form.submit}} {% if form.username.errors %}
+        <div class="alert alert-danger" role="alert">
+          {{ form.username.errors[0] }}
+        </div>
+        {% endif %}
+      </form>
+      <p>Already have an account?</p>
+      <a href="{{url_for('login')}}">
+        <button>Login</button>
+      </a>
+    </div>
+  </body>
+</html>
