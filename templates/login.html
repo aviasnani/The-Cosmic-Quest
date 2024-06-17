@@ -7,10 +7,18 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='login.css') }}"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Login</title>
   </head>
   <body>
-    <h1 class="typing-effect">Login</h1>
+    <h1 class="typing-effect"></h1>
     <div class="logindetailsdiv">
       <form action="" method="POST">
         {{ form.hidden_tag() }}

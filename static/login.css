@@ -17,6 +17,7 @@ button{
   border: none;
   left: 100px;
   font-size: 16px;
+  font-family: "Orbitron", sans-serif;
 
 }
 button:hover{
