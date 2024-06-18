@@ -1,0 +1,119 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/static/images/bgimg.webp);
+  font-family: "Orbitron", sans-serif;
+}
+button{
+  width: 100px;
+  height: 50px;
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+  border: none;
+  font-size: 16px;
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 15px;
+
+}
+button:hover{
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+h1, p{
+  font-family:  sans-serif;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+
+}form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  font-family: "Orbitron", sans-serif;
+  padding-top: 100px;
+
+}
+.signupdetailsdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width:70%;
+  height: 30%;
+  border: 1px solid white;
+}
+input[type='text'], input[type='password'], input[type="email"]{
+  font-size: 14px;
+  color: #ffffff;
+  background-color: transparent;
+  width: 350px;
+  height: 100px;
+  padding-left: 10px;
+  border: 2px solid white;
+  margin: 10px;
+
+}
+input[type='submit']{
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 12px;
+  margin-top: 30px;
+  font-size: 16px;
+  margin-bottom: 70px;
+  position: relative;
+  bottom: 20px;
+  font-family: "Orbitron", sans-serif;
+
+}
+input[type='submit']:hover{
+  transition: 0.1s ease;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+}
+.typing-effect{
+  overflow: hidden;
+}
+.typing-effect::before{
+  content: 'Signup...'; /* Add content to target */
+  display: inline-block;
+  width: 0;
+  animation: typing 2s steps(10, end) forwards;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+#errordiv p{
+ color: red;
+ font-size: 15px;
+  position: relative;
+  top: 50px;
+}
+.login-btn{
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+}
+.already-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  bottom: 100px;
+  width: 100%;
+  height: 70px;
+}
+
+

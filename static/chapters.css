@@ -1,0 +1,36 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.chapters-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid white;
+  width: 100%;
+  height: 100vh;
+ 
+}
+
+
+.chapters-div a{
+  width: 60%;
+  
+}
+.chapters-div button{
+  width: 100%;
+  height: 80px;
+  border: 5px solid white;
+  text-align: center;
+  color: #ffffff;
+  background-color: black;
+  font-family: "Orbitron", sans-serif;
+
+}
+.chapters-div button:hover{
+  cursor: pointer;
+}
+
