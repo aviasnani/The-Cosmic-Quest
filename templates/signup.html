@@ -29,9 +29,10 @@
         {%endfor%} {{ form.password }} {{form.submit}} {% if
         form.username.errors %} {% endif %}
       </form>
-      <br /><br />
+      <br />
+
       <div class="already-div">
-        <p class="already">Already have an account</p>
+        <p class="already">Already have an account?</p>
         <a href="{{url_for('login')}}">
           <button class="login-btn">Login</button>
         </a>
