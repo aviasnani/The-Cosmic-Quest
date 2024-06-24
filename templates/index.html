@@ -43,24 +43,28 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="list-item">
-            <a class="button-link" href="#">
-              <button id="button">Hello</button>
+            <a class="button-link" href="{{url_for('login')}}">
+              <button id="button">Explore</button>
             </a>
           </li>
           <li class="list-item">
-            <a class="button-link" href="#">
-              <button id="button">Hello</button>
+            <a class="button-link" href="{{url_for('login')}}">
+              <button id="button">Login</button>
             </a>
           </li>
           <li class="list-item">
-            <a class="button-link" href="#">
-              <button id="button">Hello</button>
+            <a class="button-link" href="{{url_for('signup')}}">
+              <button id="button">Signup</button>
             </a>
           </li>
         </ul>
       </div>
-    </nav>
-
+    </nav> <br> <br>
+    <div class="container-fluid">
+      <div class="row">
+        <div id="col1" class="col-lg-6 border"><h1>Hello</h1></div>
+        <div id="col2" class="col-lg-6 border"><h1>world</h1></div>
+      </div>
     <!--<h1>Welcome to the cosmic Quest</h1>
       <a href="{{url_for('login')}}">
         <button>Login</button>
