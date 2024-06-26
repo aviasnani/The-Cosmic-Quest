@@ -233,7 +233,7 @@ def c1q3():
         new_score = Score(user_id=user_id, score=session['score'])
         db.session.add(new_score)
         db.session.commit()
-    
+  
    message = session.pop('message', None)
    score = session.get('score', 0)
    return render_template('c1q3.html', quiz=quiz, message=message, score=score)
