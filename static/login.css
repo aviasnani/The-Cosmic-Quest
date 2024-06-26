@@ -46,7 +46,7 @@ form{
   flex-direction: column;
   width: 50%;
   height: 500px;
-  border: 1px solid white;
+  border: none;
 }
 input[type="text"], input[type="password"]{
   font-size: 14px;
@@ -97,9 +97,13 @@ input[type="submit"]:hover{
   width: 100%;
   height: 50px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+}
+.signupdiv p{
+  width: 300px;
 }
 a{
   text-decoration: none;
