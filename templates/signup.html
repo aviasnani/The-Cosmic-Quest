@@ -27,15 +27,12 @@
         {%endfor%} {{ form.username }} {% for error in form.username.errors %}
         <p class="error">{{error}}</p>
         {%endfor%} {{ form.password }} {{form.submit}} {% if
-        form.username.errors %}
-        <div class="alert alert-danger" role="alert">
-          {{ form.username.errors[0] }}
-        </div>
-        {% endif %}
+        form.username.errors %} {% endif %}
       </form>
-      <br /><br />
+      <br />
+
       <div class="already-div">
-        <p class="already">Already have an account</p>
+        <p class="already">Already have an account?</p>
         <a href="{{url_for('login')}}">
           <button class="login-btn">Login</button>
         </a>

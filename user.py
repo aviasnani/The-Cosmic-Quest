@@ -233,7 +233,7 @@ def c1q3():
         new_score = Score(user_id=user_id, score=session['score'])
         db.session.add(new_score)
         db.session.commit()
-    
+  
    message = session.pop('message', None)
    score = session.get('score', 0)
    return render_template('c1q3.html', quiz=quiz, message=message, score=score)
@@ -385,4 +385,4 @@ def delete_user(user_id):
 if __name__ == '__main__':
   with app.app_context():
     db.create_all()
-  app.run(debug=True, port=5001)
+  app.run(debug=True,host="0.0.0.0", port=5001)

@@ -46,7 +46,7 @@ h1, p{
   flex-direction: column;
   width:70%;
   height: 30%;
-  border: 1px solid white;
+  border: none;
 }
 input[type='text'], input[type='password'], input[type="email"]{
   font-size: 14px;
@@ -125,4 +125,3 @@ input[type='submit']:hover{
   bottom: 12px;
   right: 65px;
 }
-
