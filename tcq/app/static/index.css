@@ -235,16 +235,3 @@ body{
     height: 100%;
   }
 }
-@media (max-width: 415px){
-  #col2{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    
-  }
-  #col2 img{
-    margin-right: 20px;
-    width: 350px;
-    height: 200px;
-  }
-}
