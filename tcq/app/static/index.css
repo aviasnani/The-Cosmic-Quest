@@ -70,7 +70,9 @@ body{
     height: 400px;
   }
 
-
+#starshipcol1 h1 h3{
+   color:#fff;
+}
 @media (max-width: 415px) {
   img{
     position: relative;
