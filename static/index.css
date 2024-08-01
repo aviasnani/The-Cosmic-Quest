@@ -78,6 +78,22 @@ body{
 #starshipcol1 h1 h3{
    color:#fff;
 }
+#video-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sonicboom{
+  object-fit: cover;
+  width: 600px;
+  height: 400px;
+  background-color: black;
+}
+#videodiv{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 @media (max-width: 415px) {
   img{
     position: relative;
