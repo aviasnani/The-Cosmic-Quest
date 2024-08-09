@@ -134,6 +134,10 @@ body{
     position: relative;
     left: 10px;
   }
+  #sonicboom{
+    width: 300px;
+    height: 200px;
+  }
 }
 
 #col1{
