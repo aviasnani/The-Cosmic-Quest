@@ -179,10 +179,10 @@ def chapter6():
 def c1q1():
    if 'score' not in session:
         session['score'] = 0 
-   quiz = mongo.db.chapter1.find_one()
+   quiz = mongo.db.chapter1.find_one() # chapter 1 quiz 1
    if request.method == "POST":
         selected_answer = request.form.get('planet')
-        correct_answer = quiz["correct answer"]
+        correct_answer = quiz["correct answer"] #correct answer of quiz one
         message = 'That was correct!' if selected_answer == correct_answer else f'Sorry, the answer was {correct_answer}'
         session['message'] = message
         session['score'] = session.get('score', 0) + 5 if message == 'That was correct!' else session.get('score', 0)
