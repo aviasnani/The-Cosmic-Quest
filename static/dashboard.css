@@ -1,5 +1,41 @@
 
-#header-section{
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+.video-background{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+#bg-vid{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border: none;
+  z-index: -1;
+}
+.logo{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+#img-link, .logo:hover{
+  cursor: pointer;
+}
+#navbar{
+  width: 100%;
+  height: 150px;
+  color: #fff;
+  font-family: 'Orbitron';
+}
+/*#header-section{
   width: 100vw;
   height: 180px;
   display: flex;
@@ -226,4 +262,4 @@
   border: 2px solid #ffffff;
   cursor: pointer;
   transition: 0.1s ease;
-}
+} */
