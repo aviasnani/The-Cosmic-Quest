@@ -35,6 +35,116 @@ body{
   color: #fff;
   font-family: 'Orbitron';
 }
+.navbar-toggler-icon, .navbar-toggler{
+  background-color: #fff;
+  color: #fff;
+  margin-right: 0;
+}
+.navbar-toggler-icon{
+  width: 45px !important;
+  height: 45px !important;
+  color: #fff !important;
+  position: relative;
+  left: 50px;
+}
+#toggler-button{
+  border: none;
+}
+#profileButton{
+  background-color: transparent;
+  border: none;
+}
+#profileIcon{
+  font-size: 30px;
+}
+#button{
+  width: 150px;
+  height: 50px;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+
+}
+#button:hover{
+  border: 1px solid #fff;
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+.offcanvas-title{
+  color: #fff;
+  font-family: 'Orbitron';
+}
+.offcanvas-body{
+  background-color: black;
+}
+.offcanvas-body p{
+  font-size: 30px;
+  font-family: 'Orbitron';
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.offcanvas-header{
+  background-color: black;
+  border-bottom: 2px solid #fff;
+  
+}
+#btnClose{
+  background-color: #fff !important;
+}
+#btnP{
+  color: #fff;
+  background-color: black;
+  border: none;
+  text-decoration: none;
+  width: 100%;
+  font-family: 'Orbitron';
+  margin-bottom: 20px;
+  height: 40px;
+  text-align: left;
+  padding-left: 10px;
+}
+#btnP:hover{
+  border: 1px solid #fff;
+  transition: 1s ease;
+}
+@media (max-width: 576px){
+  .logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .navbar-toggler,
+  #profileButton {
+    padding: 0;
+    margin: 0 !important;
+  }
+
+  .navbar-toggler {
+    margin-right: 0 !important;
+  }
+
+  #profileButton {
+    margin-left: 0 !important;
+  }
+
+  /* Make the navbar buttons align without extra space */
+  #navbar {
+    padding: 0;
+    margin: 0;
+  }
+}
+@media(max-width: 400px){
+  .logo{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+  }
+}
 /*#header-section{
   width: 100vw;
   height: 180px;

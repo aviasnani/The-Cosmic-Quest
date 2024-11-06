@@ -7,6 +7,7 @@
       href="{{ url_for('static', filename='dashboard.css') }}"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,7 +53,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto d-flex align-items-center"> 
           <li class="list-item">
             <a class="button-link" href="{{url_for('login')}}">
               <button id="button">Explore</button>
@@ -70,8 +71,46 @@
           </li>
         </ul>
       </div>
-    </nav> 
+      <button
+      id="profileButton"
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#profileOffcanvas"
+      aria-controls="profileOffcanvas"
+    >
+      <i id="profileIcon" class="bi bi-person-circle"></i>
+    </button>
+  </div> 
+    <div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="profileOffcanvas"
+    aria-labelledby="profileOffcanvasLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="profileOffcanvasLabel">Profile</h5>
+      <button
+      id="btnClose"
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>User</p>
+      <ul class="list-unstyled">
+        <li><a ><button id="btnP" href="#">My Account</button></a></li>
+        <li><a ><button id="btnP" href="#">Settings</button></a></li>
+        <li><a ><button id="btnP" href="#">Help</button></a></li>
+        <li><a ><button id="btnP" href="#">Logout</button></a></li>
+      </ul>
+    </div>
+  </div>
+
       </div>
+      <br><br> <br> <br>
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm"><h1>content</h1></div>
@@ -81,5 +120,7 @@
 
     <!-- <a href="{{url_for('login')}}">
       <button>Logout</button> -->
+      <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
