@@ -56,17 +56,32 @@
         <ul class="navbar-nav ms-auto d-flex align-items-center"> 
           <li class="list-item">
             <a class="button-link" href="{{url_for('login')}}">
-              <button id="button">Explore</button>
+              <button id="button">Chapters</button>
             </a>
           </li>
           <li class="list-item">
             <a class="button-link" href="{{url_for('login')}}">
-              <button id="button">Login</button>
+              <button id="button">News</button>
             </a>
           </li>
           <li class="list-item">
             <a class="button-link" href="{{url_for('signup')}}">
-              <button id="button">Signup</button>
+              <button id="button">Research</button>
+            </a>
+          </li>
+          <li class="list-item">
+            <a class="button-link" href="{{url_for('signup')}}">
+              <button id="button">Interesting Facts</button>
+            </a>
+          </li>
+          <li class="list-item">
+            <a class="button-link" href="{{url_for('signup')}}">
+              <button id="button">NASA</button>
+            </a>
+          </li>
+          <li class="list-item">
+            <a class="button-link" href="{{url_for('signup')}}">
+              <button id="button">SpaceX</button>
             </a>
           </li>
         </ul>
@@ -99,12 +114,12 @@
       ></button>
     </div>
     <div class="offcanvas-body">
-      <p>User</p>
+      <p>{{first_name}}</p>
       <ul class="list-unstyled">
-        <li><a ><button id="btnP" href="#">My Account</button></a></li>
-        <li><a ><button id="btnP" href="#">Settings</button></a></li>
-        <li><a ><button id="btnP" href="#">Help</button></a></li>
-        <li><a ><button id="btnP" href="#">Logout</button></a></li>
+        <li><a  href="{{url_for('profile')}}"><button id="btnP" href="#">My Account</button></a></li>
+        <li><a ><button id="btnP" href="#">Stats</button></a></li>
+        <li><a ><button id="btnP" href="#">Contact Us</button></a></li>
+        <li><a href="{{url_for('logout')}}"><button id="btnP" href="#">Logout</button></a></li>
       </ul>
     </div>
   </div>

@@ -139,7 +139,8 @@ def profile():
   email = current_user.email
   phone = current_user.phone
   username = current_user.username
-  return render_template('profile.html', first_name = first_name, last_name = last_name, email = email, phone = phone, username=username)
+  user_id=current_user.id
+  return render_template('profile.html', first_name = first_name, last_name = last_name, email = email, phone = phone, username=username, user_id=user_id)
 
 @app.route('/logout', methods=["GET", "POST"])
 @login_required
@@ -385,4 +386,4 @@ def delete_user(user_id):
 if __name__ == '__main__':
   with app.app_context():
     db.create_all()
-  app.run(debug=True)
+  app.run(debug=True,host="0.0.0.0",port = 5001)

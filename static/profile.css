@@ -1,13 +1,12 @@
 body{
+  background-color: black !important;
+}
+.main-div{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: black;
-}
-.maindiv{
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
  .profilediv{
   display: flex;
@@ -21,7 +20,7 @@ body{
   padding-top: 20px;
  }
  .profilediv p{
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron" !important;
   color: #ffffff;
  }
  .profilediv button{
