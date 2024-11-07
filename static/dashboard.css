@@ -153,6 +153,18 @@ body{
     height: 130px;
   }
 }
+
+.col h1, p{
+  color: #fff;
+  font-family: 'Orbitron';
+}
+.col h1{
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.col p{
+  font-size: 20px;
+}
 /*#header-section{
   width: 100vw;
   height: 180px;
