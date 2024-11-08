@@ -6,12 +6,14 @@ from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
 from flask_pymongo import PyMongo
+import requests
 
 
 app = Flask(__name__) #instance
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'timelineismalleable'
 app.config['MONGO_URI'] = "mongodb://localhost:27017/chapter_quizzes"
+app.config['NASA_API_KEY'] = "oKVg0TFJ118VhEtWSIzkBrj1xDqAQSCXcJTD0v3S"
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
@@ -381,7 +383,23 @@ def delete_user(user_id):
         db.session.commit()
         return redirect(url_for('login'))
  
+@app.route('/space_image', methods=["GET"])
+@login_required
+def space_image():
+    nasa_api_key = app.config['NASA_API_KEY']
+    nasa_url = f"https://api.nasa.gov/planetary/apod?api_key={nasa_api_key}"
+    response = requests.get(nasa_url)
+    if response.status_code == 200:
+        data = response.json()
+        image_url = data.get("url", "")
+        title = data.get("title", "NASA Image of the Day")
+        description = data.get("explanation", "No description available.")
+    else:
+        image_url = ""
+        title = "Image Unavailable"
+        description = "NASA API could not fetch the data at this time."
 
+    return render_template('space_image.html', image_url=image_url, title=title, description=description)
 
 if __name__ == '__main__':
   with app.app_context():
