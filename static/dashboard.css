@@ -153,18 +153,59 @@ body{
     height: 130px;
   }
 }
+#col1 {
 
-.col h1, p{
-  color: #fff;
-  font-family: 'Orbitron';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-.col h1{
-  font-size: 50px;
-  margin-bottom: 10px;
+#col1 h1,p{
+  margin-left: 15px;
 }
-.col p{
+#col1 h1{
+  font-size: 60px;
+}
+#col1 p{
   font-size: 20px;
 }
+#col1, #col2 h1, p, h4{
+  color: #fff !important;
+  font-family: 'Orbitron';
+}
+
+#col1, #col2 p{
+  font-size: 20px;
+}
+#col2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+.title-div{
+  width: 100%;
+  
+}
+.img-div{
+width: 100%;
+}
+.desc-div{
+width: 100%;
+}
+.main{
+  width: 80%;
+}
+#nasa-img{
+ width: 450px;
+ height: 400px;
+}
+#col1, #col2{
+  margin-bottom: 30px;
+}
+
 /*#header-section{
   width: 100vw;
   height: 180px;

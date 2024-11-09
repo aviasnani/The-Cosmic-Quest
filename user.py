@@ -123,7 +123,19 @@ def login():
 @login_required
 def dashboard():
   first_name = current_user.fname
-  return render_template('dashboard.html', first_name=first_name)
+  nasa_api_key = app.config['NASA_API_KEY']
+  nasa_url = f"https://api.nasa.gov/planetary/apod?api_key={nasa_api_key}"
+  response = requests.get(nasa_url)
+  if response.status_code == 200:
+     data = response.json()
+     image_url = data.get("url", "")
+     title = data.get("title", "NASA image of the day")
+     description = data.get("Explanation", "No description available")
+  else:
+     image_url = ""
+     title = "Image unavailable"
+     description = "NASA API Could now fetch the data at this time. Try again later"
+  return render_template('dashboard.html', first_name=first_name, image_url=image_url, title=title, description=description)
 
 @app.route('/stats', methods=["GET", "POST"])
 def stats():
@@ -383,24 +395,6 @@ def delete_user(user_id):
         db.session.commit()
         return redirect(url_for('login'))
  
-@app.route('/space_image', methods=["GET"])
-@login_required
-def space_image():
-    nasa_api_key = app.config['NASA_API_KEY']
-    nasa_url = f"https://api.nasa.gov/planetary/apod?api_key={nasa_api_key}"
-    response = requests.get(nasa_url)
-    if response.status_code == 200:
-        data = response.json()
-        image_url = data.get("url", "")
-        title = data.get("title", "NASA Image of the Day")
-        description = data.get("explanation", "No description available.")
-    else:
-        image_url = ""
-        title = "Image Unavailable"
-        description = "NASA API could not fetch the data at this time."
-
-    return render_template('space_image.html', image_url=image_url, title=title, description=description)
-
 if __name__ == '__main__':
   with app.app_context():
     db.create_all()

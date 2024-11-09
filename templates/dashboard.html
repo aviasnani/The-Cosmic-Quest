@@ -75,7 +75,7 @@
             </a>
           </li>
           <li class="list-item">
-            <a class="button-link" href="{{url_for('space_image')}}">
+            <a class="button-link" href="#">
               <button id="button">NASA</button>
             </a>
           </li>
@@ -125,12 +125,24 @@
   </div> <br> <br> <br> <br>
   <div class="container-fluid">
     <div class="row">
-      <div class="col">
-        <h1>Hello {{first_name}}</h1>
+      <div id="col1" class="col-lg-6">
+        <h1>Hello {{first_name}}, </h1>
         <p>Welcome to The Cosmic Quest!</p>
       </div>
-      <div class="col">
-        <h1>content here</h1>
+      <div id="col2" class="col-lg-6">
+       <div class="main">
+        <div class="title-div">
+          <h4>NASA image of the day!</h4>
+          <h1>{{title}}</h1>
+        </div>
+       
+        <div class="img-div">
+          <img id="nasa-img" src="{{image_url}}" alt="Nasa Image">
+        </div>
+        <div class="desc-div">
+          <p>{{ description }}</p>
+        </div>
+       </div>
       </div>
       </div>
    
