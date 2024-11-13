@@ -134,7 +134,7 @@ def dashboard():
   else:
      image_url = ""
      title = "Image unavailable"
-     description = "NASA API Could now fetch the data at this time. Try again later"
+     description = "NASA API Could not fetch the data at this time."
   return render_template('dashboard.html', first_name=first_name, image_url=image_url, title=title, description=description)
 
 @app.route('/stats', methods=["GET", "POST"])
