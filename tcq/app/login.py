@@ -6,14 +6,14 @@ from wtforms.validators import InputRequired, Length
 from models import User
 from __init__ import bcrypt
 
-login = Blueprint('login', __name__)
+login_bp = Blueprint('login', __name__)
 
 class LoginForm(FlaskForm):
   username = StringField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
   password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Password"})
   submit = SubmitField("Login")
 
-@login.route('login', methods=['GET', 'POST'])
+@login_bp.route('login', methods=['GET', 'POST'])
 def login():
   error = None
   form = LoginForm()

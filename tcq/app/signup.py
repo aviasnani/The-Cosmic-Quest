@@ -6,7 +6,7 @@ from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import InputRequired, ValidationError, Length
 from flask_sqlalchemy import SQLAlchemy
 
-signup=Blueprint('signup', __name__)
+signup_bp=Blueprint('signup', __name__)
 
 class SignupForm(FlaskForm):
   fname = StringField(validators=[InputRequired(), Length(min=3, max=20)], render_kw={"placeholder": "First Name"})
@@ -31,7 +31,7 @@ class SignupForm(FlaskForm):
       raise ValidationError("This phone number already exists.")
 
 
-@signup.route('/signup', methods=["GET", "POST"])
+@signup_bp.route('/signup', methods=["GET", "POST"])
 def signup():
   form=SignupForm()
   if form.validate_on_submit():
