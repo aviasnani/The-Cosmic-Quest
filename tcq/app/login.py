@@ -3,8 +3,8 @@ from flask_login import login_required, login_user, logout_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length
-from models import User
-from __init__ import bcrypt
+from .models import User
+from .__init__ import bcrypt
 
 login_bp = Blueprint('login', __name__)
 
@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
   password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Password"})
   submit = SubmitField("Login")
 
-@login_bp.route('login', methods=['GET', 'POST'])
+@login_bp.route('/login', methods=['GET', 'POST'])
 def login():
   error = None
   form = LoginForm()
@@ -24,7 +24,7 @@ def login():
         login_user(user) 
         session.pop('score', None)  # clearning the score session variable
         session.pop('message', None) # clearing the message session variable
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('dashboard.dashboard'))
       else:
        error = "Incorrect Password!"
     else: 

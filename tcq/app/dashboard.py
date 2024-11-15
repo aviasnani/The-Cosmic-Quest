@@ -5,7 +5,7 @@ import requests
 
 dashboard_bp = Blueprint('dashboard', __name__)
 
-@dashboard_bp.route('dashboard', methods=['GET', 'POST'])
+@dashboard_bp.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
   first_name = current_user.fname

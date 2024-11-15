@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for
-from .models import User, Score
-from .__init__ import bcrypt, db
+from .models import User, Score, db
+from .__init__ import bcrypt
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import InputRequired, ValidationError, Length
@@ -42,7 +42,7 @@ def signup():
       initial_score = Score(user_id=new_user.id, score=0) #setting an initial score of 0 for every new user
       db.session.add(initial_score) # adding that initial score to the score table in the database
       db.session.commit() #saving changes
-      return redirect(url_for('login')) #redirecting to login after the new user is created
+      return redirect(url_for('login.login')) #redirecting to login after the new user is created
 
-
+  return render_template('signup.html',form=form)
 

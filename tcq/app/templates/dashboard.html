@@ -55,22 +55,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto d-flex align-items-center "> 
           <li class="list-item">
-            <a class="button-link" href="{{url_for('login')}}">
+            <a class="button-link" href="{{url_for('login.login')}}">
               <button id="button">Chapters</button>
             </a>
           </li>
           <li class="list-item">
-            <a class="button-link" href="{{url_for('login')}}">
+            <a class="button-link" href="{{url_for('login.login')}}">
               <button id="button">News</button>
             </a>
           </li>
           <li class="list-item">
-            <a class="button-link" href="{{url_for('signup')}}">
+            <a class="button-link" href="{{url_for('signup.signup')}}">
               <button id="button">Research</button>
             </a>
           </li>
           <li class="list-item">
-            <a class="button-link" href="{{url_for('signup')}}">
+            <a class="button-link" href="{{url_for('signup.signup')}}">
               <button id="button">Interesting Facts</button>
             </a>
           </li>
@@ -80,7 +80,7 @@
             </a>
           </li>
           <li class="list-item">
-            <a class="button-link" href="{{url_for('signup')}}">
+            <a class="button-link" href="{{url_for('signup.signup')}}">
               <button id="button">SpaceX</button>
             </a>
           </li>
@@ -116,10 +116,10 @@
     <div class="offcanvas-body">
       <p>{{first_name}}</p>
       <ul class="list-unstyled">
-        <li><a  href="{{url_for('profile')}}"><button id="btnP" href="#">My Account</button></a></li>
+        <li><a  href="{{url_for('profile.profile')}}"><button id="btnP" href="#">My Account</button></a></li>
         <li><a ><button id="btnP" href="#">Stats</button></a></li>
         <li><a ><button id="btnP" href="#">Contact Us</button></a></li>
-        <li><a href="{{url_for('logout')}}"><button id="btnP" href="#">Logout</button></a></li>
+        <li><a href="{{url_for('logout.logout')}}"><button id="btnP" href="#">Logout</button></a></li>
       </ul>
     </div>
   </div> <br> <br> <br> <br>
@@ -152,9 +152,6 @@
       </div>
     </div>
 
-    <!-- <a href="{{url_for('login')}}">
-      <button>Logout</button> -->
-      <!-- Bootstrap JavaScript Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
