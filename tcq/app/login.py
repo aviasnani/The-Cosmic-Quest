@@ -1,5 +1,5 @@
 from flask import Blueprint, redirect, render_template, url_for, session
-from flask_login import login_required, login_user, logout_user
+from flask_login import login_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length
