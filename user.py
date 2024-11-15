@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+'''from flask import Flask, render_template, redirect, url_for, request, session
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -398,4 +398,4 @@ def delete_user(user_id):
 if __name__ == '__main__':
   with app.app_context():
     db.create_all()
-  app.run(debug=True,host="0.0.0.0",port = 5001)
+  app.run(debug=True,host="0.0.0.0",port = 5001) '''
