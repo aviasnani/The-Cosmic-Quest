@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+'''from flask import Flask, render_template, redirect, url_for, request, session
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -6,12 +6,14 @@ from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
 from flask_pymongo import PyMongo
+import requests
 
 
 app = Flask(__name__) #instance
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'timelineismalleable'
 app.config['MONGO_URI'] = "mongodb://localhost:27017/chapter_quizzes"
+app.config['NASA_API_KEY'] = "oKVg0TFJ118VhEtWSIzkBrj1xDqAQSCXcJTD0v3S"
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
@@ -121,7 +123,19 @@ def login():
 @login_required
 def dashboard():
   first_name = current_user.fname
-  return render_template('dashboard.html', first_name=first_name)
+  nasa_api_key = app.config['NASA_API_KEY']
+  nasa_url = f"https://api.nasa.gov/planetary/apod?api_key={nasa_api_key}"
+  response = requests.get(nasa_url)
+  if response.status_code == 200:
+     data = response.json()
+     image_url = data.get("url", "")
+     title = data.get("title", "NASA image of the day")
+     description = data.get("Explanation", "No description available")
+  else:
+     image_url = ""
+     title = "Image unavailable"
+     description = "NASA API Could not fetch the data at this time."
+  return render_template('dashboard.html', first_name=first_name, image_url=image_url, title=title, description=description)
 
 @app.route('/stats', methods=["GET", "POST"])
 def stats():
@@ -139,7 +153,8 @@ def profile():
   email = current_user.email
   phone = current_user.phone
   username = current_user.username
-  return render_template('profile.html', first_name = first_name, last_name = last_name, email = email, phone = phone, username=username)
+  user_id=current_user.id
+  return render_template('profile.html', first_name = first_name, last_name = last_name, email = email, phone = phone, username=username, user_id=user_id)
 
 @app.route('/logout', methods=["GET", "POST"])
 @login_required
@@ -380,9 +395,7 @@ def delete_user(user_id):
         db.session.commit()
         return redirect(url_for('login'))
  
-
-
 if __name__ == '__main__':
   with app.app_context():
     db.create_all()
-  app.run(debug=True,host="0.0.0.0", port=5001)
+  app.run(debug=True,host="0.0.0.0",port = 5001) '''

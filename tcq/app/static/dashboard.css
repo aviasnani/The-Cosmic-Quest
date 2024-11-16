@@ -1,0 +1,436 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+.video-background{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+#bg-vid{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border: none;
+  z-index: -1;
+}
+.logo{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+#img-link, .logo:hover{
+  cursor: pointer;
+}
+#navbar{
+  width: 100%;
+  height: 150px;
+  color: #fff;
+  font-family: 'Orbitron';
+}
+.navbar-toggler-icon, .navbar-toggler{
+  background-color: #fff;
+  color: #fff;
+  margin-right: 0;
+}
+.navbar-toggler-icon{
+  width: 45px !important;
+  height: 45px !important;
+  color: #fff !important;
+  position: relative;
+  left: 50px;
+}
+#toggler-button{
+  border: none;
+}
+#profileButton{
+  background-color: transparent;
+  border: none;
+}
+#profileIcon{
+  font-size: 30px;
+}
+#button{
+  width: 150px;
+  height: 50px;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+
+}
+#button:hover{
+  border: 1px solid #fff;
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+.offcanvas-title{
+  color: #fff;
+  font-family: 'Orbitron';
+}
+.offcanvas-body{
+  background-color: black;
+}
+.offcanvas-body p{
+  font-size: 30px;
+  font-family: 'Orbitron';
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.offcanvas-header{
+  background-color: black;
+  border-bottom: 2px solid #fff;
+  
+}
+#btnClose{
+  background-color: #fff !important;
+}
+#btnP{
+  color: #fff;
+  background-color: black;
+  border: none;
+  text-decoration: none;
+  width: 100%;
+  font-family: 'Orbitron';
+  margin-bottom: 20px;
+  height: 40px;
+  text-align: left;
+  padding-left: 10px;
+}
+#btnP:hover{
+  border: 1px solid #fff;
+  transition: 1s ease;
+}
+@media(max-width: 992px){
+  .navbar-toggler{
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+}
+@media (max-width: 576px){
+  .logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .navbar-toggler,
+  #profileButton {
+    padding: 0;
+    margin: 0 !important;
+  }
+
+  .navbar-toggler {
+    margin-right: 0 !important;
+  }
+
+  #profileButton {
+    margin-left: 0 !important;
+  }
+
+  /* Make the navbar buttons align without extra space */
+  #navbar {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media(max-width: 400px){
+  .logo{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+  }
+}
+#col1 {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#col1 h1,p{
+  margin-left: 15px;
+}
+#col1 h1{
+  font-size: 60px;
+}
+#col1 p{
+  font-size: 20px;
+}
+#col1, #col2 h1, p, h4{
+  color: #fff !important;
+  font-family: 'Orbitron';
+}
+
+#col1, #col2 p{
+  font-size: 20px;
+}
+#col2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+.title-div{
+  width: 100%;
+  
+}
+.img-div{
+width: 100%;
+}
+.desc-div{
+width: 100%;
+}
+.main{
+  width: 80%;
+}
+#nasa-img{
+ width: 450px;
+ height: 400px;
+}
+#col1, #col2{
+  margin-bottom: 30px;
+}
+
+/*#header-section{
+  width: 100vw;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+#logo-div{
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+#logo-div img{
+  width: 350px;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  right: 25px;
+  
+}
+
+#buttons-div{
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+
+}
+.menu-button{
+  width: 70px;
+  height: 60px;
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+
+}
+
+
+#buttons-div img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+
+#buttons-div img:hover{
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+#name-div{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+#section2{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+#image-container-div{
+  width: 50%;
+  height: 100%;
+
+
+}
+#name-div h1, h3{
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+  margin-left: 20px;
+  position: relative;
+  bottom: 150px;
+}
+#name-div h1{
+  font-size: 50px;
+}
+#name-div h3{
+  font-size: 30px;
+}
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+.image-container{
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.scroll-images{
+  display: inline-block;
+}
+.scroll-images img{
+  width: 300px;
+  object-fit: cover;
+  height: auto;
+  margin-right: 10px;
+}
+.webb{
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+
+}
+.bottom{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 400px;
+  position: relative;
+  bottom: 250px;
+}
+.bottom p{
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+}
+.bottom button{
+  width: 170px;
+  height: 60px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 19px;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+
+}
+.bottom button:hover{
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+#score{
+  margin-right: 40px;
+  color: #ffffff;
+  font-family: "Orbitron", sans-serif;
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #000000;
+  color: white;
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding-top: 60px;
+ 
+}
+
+.account-button, .stats-button{
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-family: "Orbitron", sans-serif;
+  font-size: 16px;
+  text-align: left;
+  padding-left: 10px;
+}
+.back-button{
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 25px;
+  border: none;
+ 
+}
+.menu-main-div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.back-btn-div{
+
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.menu-btns-div{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50px;
+  flex-direction: column;
+}
+.back-button:hover, .account-button:hover, .stats-button:hover{
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: 0.1s ease;
+} */
