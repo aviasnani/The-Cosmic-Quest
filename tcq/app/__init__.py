@@ -6,11 +6,6 @@ import os
 from .models import db
 
 
-# Print out the absolute path of the database to ensure it's correct
-
-
-# declaring the db model (without initializing it)
-
 login_manager=LoginManager() # declaring login_manager as an instance of LoginManager class from flask_login
 bcrypt = Bcrypt() # declaring bcrypt to hash passwords in the database.
 
