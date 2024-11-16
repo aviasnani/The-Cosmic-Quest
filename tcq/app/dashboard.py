@@ -3,6 +3,7 @@ from flask_login import current_user, login_required
 import requests
 
 
+
 dashboard_bp = Blueprint('dashboard', __name__)
 
 @dashboard_bp.route('/dashboard', methods=['GET', 'POST'])
