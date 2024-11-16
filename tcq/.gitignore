@@ -16,3 +16,6 @@ __pycache__/
 
 # Ignore environment-specific settings
 *.env
+
+#ignore instance folder which contains the database file
+instance/
