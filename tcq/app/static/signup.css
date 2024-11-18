@@ -125,3 +125,6 @@ input[type='submit']:hover{
   bottom: 12px;
   right: 65px;
 }
+#password-error{
+  margin-top: 0;
+}
