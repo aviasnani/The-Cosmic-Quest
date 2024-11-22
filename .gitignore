@@ -21,4 +21,5 @@ __pycache__/
 #ignore instance folder which contains the database file
 instance/
 
-/tcq/app/config.py
+#gitignore
+/tcq/app/gitignore
