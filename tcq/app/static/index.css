@@ -230,14 +230,11 @@ body{
   }
 }
 @media (max-width: 416px){
-  #col1{
-    background-color: blue;
-  }
+  
   #col2{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
   }
   #col2 img{
     

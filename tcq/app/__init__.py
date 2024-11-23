@@ -20,14 +20,16 @@ def create_app():
   login_manager.user_loader(load_user)
   login_manager.login_view="login" # login.py will contain the code to authenticate the user and login
   bcrypt.init_app(app) #initializing bcrypt variable.
+  #importing blueprint from their respective files for initializing them
   from .home import home_bp
   from .dashboard import dashboard_bp
   from .login import login_bp
   from .signup import signup_bp
   from .profile import profile_bp
   from .logout import logout_bp
-  from .delete_user import delete_user_bp
-  app.register_blueprint(delete_user_bp)
+  from .delete_user import confirm_delete_bp
+  #initializing blueprints
+  app.register_blueprint(confirm_delete_bp)
   app.register_blueprint(logout_bp)
   app.register_blueprint(profile_bp)
   app.register_blueprint(login_bp)

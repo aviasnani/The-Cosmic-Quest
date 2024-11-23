@@ -125,6 +125,11 @@ input[type='submit']:hover{
   bottom: 12px;
   right: 65px;
 }
-#password-error{
+
+.password-error-div{
+  width: 350px;
+  display: flex;
+  align-items: flex-start;
   margin-top: 0;
+  margin-bottom: 20px;
 }

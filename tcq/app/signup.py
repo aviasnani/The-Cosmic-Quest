@@ -36,19 +36,20 @@ class SignupForm(FlaskForm):
 @signup_bp.route('/signup', methods=["GET", "POST"])
 def signup():
   form=SignupForm()
+  error = None
   if form.validate_on_submit():
-      if form.confirm_password.data != form.password.data:
-        error = "Kyu nai horaha login?"
-        return render_template('signup.html', form=form, error=error)
-      hashed_password = bcrypt.generate_password_hash(form.password.data)
-      new_user = User(fname=form.fname.data, lname=form.lname.data, email=form.email.data, phone=form.phone.data, username=form.username.data, password=hashed_password)
-      db.session.add(new_user) #adding new user to the database
-      db.session.commit()
-      initial_score = Score(user_id=new_user.id, score=0) #setting an initial score of 0 for every new user
-      db.session.add(initial_score) # adding that initial score to the score table in the database
-      db.session.commit() #saving changes
-      return redirect(url_for('login.login')) #redirecting to login after the new user is created
-    
+      if form.confirm_password.data == form.password.data:
+        hashed_password = bcrypt.generate_password_hash(form.password.data)
+        new_user = User(fname=form.fname.data, lname=form.lname.data, email=form.email.data, phone=form.phone.data, username=form.username.data, password=hashed_password)
+        db.session.add(new_user) #adding new user to the database
+        db.session.commit()
+        initial_score = Score(user_id=new_user.id, score=0) #setting an initial score of 0 for every new user
+        db.session.add(initial_score) # adding that initial score to the score table in the database
+        db.session.commit() #saving changes
+        return redirect(url_for('login.login')) #redirecting to login after the new user is created
+      else:
+        error = "Passwords do not match"
 
+    
   return render_template('signup.html',form=form, error=error)
 
